@@ -29,13 +29,22 @@ int main()
     
     printf("You entered %d correct integer values. The value was %dms\n", parsed, delay_ms);
 
+
+    //delay off
+    printf("\n\nTo set the delay to turn led off(in ms), type in an integer number and press return\n");
+    int delay_ms_off;
+    int parsed_off = scanf("%d", &delay_ms_off);
+    
+    printf("You entered %d correct integer values. The value was %dms\n", parsed_off, delay_ms_off);
+
+
     // Stop
     while (parsed > 0) {
         wait_us(delay_ms * 1000);
         led1 = 1;
         led2 = 1;
         led3 = 1;
-        wait_us(delay_ms * 1000);
+        wait_us(delay_ms_off * 1000);
         led1 = 0;
         led2 = 0;
         led3 = 0;        
